@@ -1,0 +1,25 @@
+
+#include <iostream>
+#include<cstdio>
+using namespace std;
+int s[100];
+int main()
+{
+    int n,t,h,i;
+    while(cin>>n){
+        if(n==0)break;
+        for(i=1;i<=n+1;i++)
+            s[i]=i;h=1;t=n+1;
+        cout<<"Discarded cards:";
+        while(h<t-1){
+            if(h<t-2)
+            cout<<" "<<s[h]<<",";
+            else
+                cout<<" "<<s[h];
+            h++;  s[t]=s[h];
+            t++;  h++;
+        }
+        cout<<endl;
+        cout<<"Remaining card:"<<" "<<s[h]<<endl;
+    }
+}
